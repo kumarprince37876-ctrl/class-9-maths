@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Probability</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+.container{max-width:900px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-bottom:12px;box-shadow:0 0 5px #ccc;}
+h2{margin-top:0;}
+button.mcq-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;margin-top:8px;}
+p.result{font-weight:bold;margin-top:5px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths</h1>
+<p>Chapter: Probability – Notes + MCQs</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+<!-- Notes Section -->
+<div class="card">
+<h2>Notes / Formulas</h2>
+<ul>
+<li>Probability of an event: <b>P(E) = Number of favourable outcomes / Total number of outcomes</b></li>
+<li>Probability of certain event: P(E) = 1</li>
+<li>Probability of impossible event: P(E) = 0</li>
+<li>Sum of probabilities of all elementary events = 1</li>
+<li>Complementary event: <b>P(not E) = 1 – P(E)</b></li>
+<li>0 ≤ P(E) ≤ 1</li>
+</ul>
+
+<p class="example"><b>Example 1:</b> Tossing a coin: P(heads) = 1/2, P(tails) = 1/2</p>
+<p class="example"><b>Example 2:</b> Rolling a die: P(4) = 1/6, P(even number) = 3/6 = 1/2</p>
+</div>
+
+<!-- MCQs Section -->
+<div class="card">
+<h2>50 MCQs – Probability</h2>
+<div id="mcq-container"></div>
+</div>
+
+</div>
+
+<script>
+const mcqs = [
+{q:"1. Probability of getting head in coin toss?", options:["1/2","1/3","1"], answer:"1/2"},
+{q:"2. Probability of getting tail in coin toss?", options:["1/2","0","1/3"], answer:"1/2"},
+{q:"3. Probability of getting 3 on die?", options:["1/6","1/3","1/2"], answer:"1/6"},
+{q:"4. Probability of even number on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"5. Probability of impossible event?", options:["0","1","1/2"], answer:"0"},
+{q:"6. Probability of certain event?", options:["1","0","1/2"], answer:"1"},
+{q:"7. Probability of not getting 5 on die?", options:["5/6","1/6","1/2"], answer:"5/6"},
+{q:"8. P(E) + P(not E) = ?", options:["1","0","2"], answer:"1"},
+{q:"9. Probability of getting red in a standard deck of cards?", options:["1/2","1/4","1/3"], answer:"1/2"},
+{q:"10. Probability of getting king in cards?", options:["1/13","1/12","1/10"], answer:"1/13"},
+{q:"11. Probability of getting prime number on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"12. Probability of getting odd number on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"13. Probability of not getting 1 on die?", options:["5/6","1/6","1/2"], answer:"5/6"},
+{q:"14. Probability of getting face card in deck?", options:["3/13","4/13","1/13"], answer:"3/13"},
+{q:"15. Probability of rolling ≤3 on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"16. Probability of getting 2 or 4 on die?", options:["1/3","1/2","1/6"], answer:"1/3"},
+{q:"17. Probability of drawing ace from deck?", options:["1/13","1/12","1/10"], answer:"1/13"},
+{q:"18. Probability of getting number >4 on die?", options:["1/3","1/2","1/6"], answer:"1/3"},
+{q:"19. Probability of drawing black card?", options:["1/2","1/4","1/3"], answer:"1/2"},
+{q:"20. Probability of tossing two heads in two coin tosses?", options:["1/4","1/2","1/3"], answer:"1/4"},
+{q:"21. Probability of at least one tail in two coin tosses?", options:["3/4","1/2","1/4"], answer:"3/4"},
+{q:"22. Probability of getting 6 in one die roll?", options:["1/6","1/2","1/3"], answer:"1/6"},
+{q:"23. Probability of getting multiple of 3 on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"24. Probability of not drawing red from deck?", options:["1/2","1/4","1/3"], answer:"1/2"},
+{q:"25. Probability of getting number <5 on die?", options:["2/3","1/2","1/3"], answer:"2/3"},
+{q:"26. Probability of getting number 2 or 3 on die?", options:["1/3","1/2","1/6"], answer:"1/3"},
+{q:"27. Probability of drawing 10 or J from deck?", options:["2/13","1/13","3/13"], answer:"2/13"},
+{q:"28. Probability of rolling an odd number on die?", options:["1/2","1/3","1/6"], answer:"1/2"},
+{q:"29. Probability of drawing queen of hearts?", options:["1/52","1/13","1/4"], answer:"1/52"},
+{q:"30. Probability of drawing number card 7?", options:["1/13","1/4","1/12"], answer:"1/13"},
+{q:"31. Probability of getting sum 7 in two dice?", options:["1/6","1/8","1/5"], answer:"1/6"},
+{q:"32. Probability of at least one 6 in two dice?", options:["11/36","1/6","1/3"], answer:"11/36"},
+{q:"33. Probability of tossing at least one head in two tosses?", options:["3/4","1/2","1/4"], answer:"3/4"},
+{q:"34. Probability of drawing face card or ace?", options:["16/52","12/52","14/52"], answer:"16/52"},
+{q:"35. Probability of not getting number 5 in two dice?", options:["35/36","1/36","1/2"], answer:"35/36"},
+{q:"36. Probability of tossing tails twice?", options:["1/4","1/2","1/3"], answer:"1/4"},
+{q:"37. Probability of drawing red or black card?", options:["1","1/2","0"], answer:"1"},
+{q:"38. Probability of drawing spade?", options:["1/4","1/2","1/13"], answer:"1/4"},
+{q:"39. Probability of getting sum 2 on two dice?", options:["1/36","1/12","1/6"], answer:"1/36"},
+{q:"40. Probability of sum 12 on two dice?", options:["1/36","1/12","1/6"], answer:"1/36"},
+{q:"41. Probability of drawing 2 red cards consecutively without replacement?", options:["25/102","1/4","1/2"], answer:"25/102"},
+{q:"42. Probability of tossing at least one tail in three tosses?", options:["7/8","1/2","3/4"], answer:"7/8"},
+{q:"43. Probability of rolling double six in two dice?", options:["1/36","1/12","1/6"], answer:"1/36"},
+{q:"44. Probability of drawing king or queen?", options:["8/52","4/52","6/52"], answer:"8/52"},
+{q:"45. Probability of getting a vowel in English alphabet?", options:["5/26","6/26","4/26"], answer:"5/26"},
+{q:"46. Probability of drawing number card 5 or 10?", options:["2/13","1/13","3/13"], answer:"2/13"},
+{q:"47. Probability of tossing head thrice?", options:["1/8","1/6","1/4"], answer:"1/8"},
+{q:"48. Probability of sum 8 on two dice?", options:["5/36","1/6","1/8"], answer:"5/36"},
+{q:"49. Probability of sum <7 on two dice?", options:["15/36","10/36","12/36"], answer:"15/36"},
+{q:"50. Probability of sum >10 on two dice?", options:["6/36","5/36","4/36"], answer:"6/36"}
+];
+
+// Render MCQs
+const container = document.getElementById('mcq-container');
+mcqs.forEach((item,i)=>{
+  let div = document.createElement('div');
+  div.className='card';
+  div.innerHTML=`<p>${i+1}. ${item.q}</p>`+
+    item.options.map(opt=>`<input type="radio" name="q${i}" value="${opt}"> ${opt}<br>`).join('')+
+    `<button class="mcq-btn" onclick="checkMCQ('q${i}','${item.answer}')">Check Answer</button>`+
+    `<p class="result" id="q${i}-result"></p>`;
+  container.appendChild(div);
+});
+
+// Check function
+function checkMCQ(qname, correct){
+  let options = document.getElementsByName(qname);
+  let result = document.getElementById(qname+'-result');
+  let selected = '';
+  for(let i=0;i<options.length;i++){
+    if(options[i].checked){ selected = options[i].value; break; }
+  }
+  if(selected===''){ result.innerHTML='Please select an answer.';}
+  else if(selected===correct){ result.innerHTML='✅ Correct!';}
+  else{ result.innerHTML=`❌ Wrong! Correct answer is ${correct}.`;}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Surface Area & Volume</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+.container{max-width:900px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-bottom:12px;box-shadow:0 0 5px #ccc;}
+h2{margin-top:0;}
+button.mcq-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;margin-top:8px;}
+p.result{font-weight:bold;margin-top:5px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths</h1>
+<p>Chapter: Surface Area & Volume – Notes + MCQs</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+<!-- Formulas Section -->
+<div class="card">
+<h2>Formulas – Surface Area & Volume</h2>
+<ul>
+<li><b>Cube</b>: TSA = 6a², Volume = a³</li>
+<li><b>Cuboid</b>: TSA = 2(lb+bh+hl), Volume = l×b×h</li>
+<li><b>Sphere</b>: TSA = 4πr², Volume = (4/3)πr³</li>
+<li><b>Hemisphere</b>: CSA = 2πr², TSA = 3πr², Volume = (2/3)πr³</li>
+<li><b>Cylinder</b>: CSA = 2πrh, TSA = 2πr(h+r), Volume = πr²h</li>
+<li><b>Cone</b>: CSA = πrl, TSA = πr(l+r), Volume = (1/3)πr²h</li>
+<li><b>Frustum of Cone</b>: CSA = π(R+r)l, TSA = π(R+r)l + πR² + πr², Volume = (1/3)πh(R²+Rr+r²)</li>
+</ul>
+<p class="example"><b>Example:</b> Cube side a=5 → TSA = 6×5²=150, Volume = 125</p>
+</div>
+
+<!-- MCQs Section -->
+<div class="card">
+<h2>50 MCQs – Surface Area & Volume</h2>
+<div id="mcq-container"></div>
+</div>
+
+</div>
+
+<script>
+const mcqs = [
+{q:"1. TSA of cube a=3?", options:["27","54","18"], answer:"54"},
+{q:"2. Volume of cube a=4?", options:["64","16","48"], answer:"64"},
+{q:"3. TSA of cuboid l=2,b=3,h=4?", options:["52","48","50"], answer:"52"},
+{q:"4. Volume of cuboid l=2,b=3,h=4?", options:["24","20","18"], answer:"24"},
+{q:"5. TSA of sphere r=7?", options:["615.75","600","650"], answer:"615.75"},
+{q:"6. Volume of sphere r=7?", options:["1436.75","1400","1500"], answer:"1436.75"},
+{q:"7. CSA of hemisphere r=5?", options:["157.08","125","150"], answer:"157.08"},
+{q:"8. TSA of hemisphere r=5?", options:["235.5","157.08","200"], answer:"235.5"},
+{q:"9. Volume of hemisphere r=5?", options:["261.8","250","300"], answer:"261.8"},
+{q:"10. CSA of cylinder r=3,h=5?", options:["94.2","90","100"], answer:"94.2"},
+{q:"11. TSA of cylinder r=3,h=5?", options:["150.8","145","155"], answer:"150.8"},
+{q:"12. Volume of cylinder r=3,h=5?", options:["141.3","140","145"], answer:"141.3"},
+{q:"13. CSA of cone r=3,l=5?", options:["47.1","45","50"], answer:"47.1"},
+{q:"14. TSA of cone r=3,l=5?", options:["65.97","60","70"], answer:"65.97"},
+{q:"15. Volume of cone r=3,h=4?", options:["37.7","36","40"], answer:"37.7"},
+{q:"16. Slant height of cone l?", options:["√(r²+h²)","r+h","r*h"], answer:"√(r²+h²)"},
+{q:"17. CSA of frustum R=5,r=3,l=4?", options:["100.53","90","95"], answer:"100.53"},
+{q:"18. TSA of frustum R=5,r=3,l=4?", options:["128.53","130","120"], answer:"128.53"},
+{q:"19. Volume of frustum R=5,r=3,h=4?", options:["116.67","120","110"], answer:"116.67"},
+{q:"20. CSA of cube a=6?", options:["216","200","210"], answer:"216"},
+{q:"21. Volume of cube a=6?", options:["216","215","220"], answer:"216"},
+{q:"22. TSA of cuboid l=3,b=4,h=5?", options:["94","92","90"], answer:"94"},
+{q:"23. Volume of cuboid l=3,b=4,h=5?", options:["60","55","65"], answer:"60"},
+{q:"24. TSA of sphere r=5?", options:["314","315","320"], answer:"314"},
+{q:"25. Volume of sphere r=5?", options:["523.6","520","530"], answer:"523.6"},
+{q:"26. CSA of hemisphere r=6?", options:["226.08","225","230"], answer:"226.08"},
+{q:"27. TSA of hemisphere r=6?", options:["282.74","280","285"], answer:"282.74"},
+{q:"28. Volume of hemisphere r=6?", options:["452.16","450","455"], answer:"452.16"},
+{q:"29. CSA of cylinder r=4,h=7?", options:["175.84","170","180"], answer:"175.84"},
+{q:"30. TSA of cylinder r=4,h=7?", options:["226.08","220","230"], answer:"226.08"},
+{q:"31. Volume of cylinder r=4,h=7?", options:["351.68","350","355"], answer:"351.68"},
+{q:"32. CSA of cone r=5,l=12?", options:["188.4","185","190"], answer:"188.4"},
+{q:"33. TSA of cone r=5,l=12?", options:["266","265","270"], answer:"266"},
+{q:"34. Volume of cone r=5,h=12?", options:["314","315","320"], answer:"314"},
+{q:"35. Slant height of cone r=5,h=12?", options:["13","12","14"], answer:"13"},
+{q:"36. CSA of frustum R=8,r=5,l=7?", options:["285.72","280","290"], answer:"285.72"},
+{q:"37. TSA of frustum R=8,r=5,l=7?", options:["353.72","350","355"], answer:"353.72"},
+{q:"38. Volume of frustum R=8,r=5,h=7?", options:["413.67","410","415"], answer:"413.67"},
+{q:"39. TSA of cube a=7?", options:["294","290","300"], answer:"294"},
+{q:"40. Volume of cube a=7?", options:["343","340","345"], answer:"343"},
+{q:"41. TSA of cuboid l=4,b=6,h=5?", options:["148","150","145"], answer:"148"},
+{q:"42. Volume of cuboid l=4,b=6,h=5?", options:["120","118","122"], answer:"120"},
+{q:"43. TSA of sphere r=6?", options:["452.16","450","455"], answer:"452.16"},
+{q:"44. Volume of sphere r=6?", options:["904.32","900","910"], answer:"904.32"},
+{q:"45. CSA of hemisphere r=7?", options:["307.88","305","310"], answer:"307.88"},
+{q:"46. TSA of hemisphere r=7?", options:["461.81","460","465"], answer:"461.81"},
+{q:"47. Volume of hemisphere r=7?", options:["717.82","715","720"], answer:"717.82"},
+{q:"48. CSA of cylinder r=5,h=10?", options:["314","310","320"], answer:"314"},
+{q:"49. TSA of cylinder r=5,h=10?", options:["471","470","475"], answer:"471"},
+{q:"50. Volume of cylinder r=5,h=10?", options:["785","780","790"], answer:"785"}
+];
+
+// Render MCQs
+const container = document.getElementById('mcq-container');
+mcqs.forEach((item,i)=>{
+  let div = document.createElement('div');
+  div.className='card';
+  div.innerHTML=`<p>${i+1}. ${item.q}</p>`+
+    item.options.map(opt=>`<input type="radio" name="q${i}" value="${opt}"> ${opt}<br>`).join('')+
+    `<button class="mcq-btn" onclick="checkMCQ('q${i}','${item.answer}')">Check Answer</button>`+
+    `<p class="result" id="q${i}-result"></p>`;
+  container.appendChild(div);
+});
+
+// Check function
+function checkMCQ(qname, correct){
+  let options = document.getElementsByName(qname);
+  let result = document.getElementById(qname+'-result');
+  let selected = '';
+  for(let i=0;i<options.length;i++){
+    if(options[i].checked){ selected = options[i].value; break; }
+  }
+  if(selected===''){ result.innerHTML='Please select an answer.';}
+  else if(selected===correct){ result.innerHTML='✅ Correct!';}
+  else{ result.innerHTML=`❌ Wrong! Correct answer is ${correct}.`;}
+}
+</script>
+
+</body>
+</html>

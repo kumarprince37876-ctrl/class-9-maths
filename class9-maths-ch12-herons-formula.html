@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Heron's Formula</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+.container{max-width:900px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-bottom:12px;box-shadow:0 0 5px #ccc;}
+h2{margin-top:0;}
+p.example{font-style:italic;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths</h1>
+<p>Chapter: Triangles – Heron's Formula</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>1. Heron’s Formula</h2>
+<p>For any triangle with sides <b>a, b, c</b>:</p>
+<ul>
+<li>Step 1: Calculate semi-perimeter <b>s</b>: <br>
+s = (a + b + c)/2
+</li>
+<li>Step 2: Area of triangle <b>Δ</b>: <br>
+Area = √[s(s-a)(s-b)(s-c)]
+</li>
+</ul>
+<p class="example">Example: Triangle with sides a=5, b=6, c=7</p>
+<ul>
+<li>Step 1: s = (5+6+7)/2 = 9</li>
+<li>Step 2: Area = √[9(9-5)(9-6)(9-7)] = √[9×4×3×2] = √216 ≈ 14.7</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Notes / Tips</h2>
+<ul>
+<li>Works for <b>any triangle</b> – scalene, isosceles, equilateral</li>
+<li>For equilateral triangle, Area = (√3/4)×a²</li>
+<li>Ensure semi-perimeter s is calculated first</li>
+<li>Use calculator for square roots for accuracy</li>
+</ul>
+</div>
+
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Triangles & Heron's Formula MCQs</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+.container{max-width:900px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-bottom:12px;box-shadow:0 0 5px #ccc;}
+h2{margin-top:0;}
+button.mcq-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;margin-top:8px;}
+p.result{font-weight:bold;margin-top:5px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths</h1>
+<p>Chapter: Triangles – Heron’s Formula – 70 MCQs</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+<div class="card">
+<h2>70 MCQs – Triangles / Heron’s Formula</h2>
+<div id="mcq-container"></div>
+</div>
+</div>
+
+<script>
+const mcqs = [
+{q:"1. Area of triangle with sides 3,4,5?", options:["6","12","7"], answer:"6"},
+{q:"2. Semi-perimeter of triangle with sides 5,6,7?", options:["9","8","10"], answer:"9"},
+{q:"3. Area using Heron's formula with sides 5,6,7?", options:["14.7","15","12"], answer:"14.7"},
+{q:"4. Equilateral triangle area formula?", options:["(√3/4)a²","a²","(1/2)ab"], answer:"(√3/4)a²"},
+{q:"5. Heron's formula works for?", options:["All triangles","Only right-angled","Only isosceles"], answer:"All triangles"},
+{q:"6. If sides are 7,24,25 triangle is?", options:["Right-angled","Equilateral","Isosceles"], answer:"Right-angled"},
+{q:"7. Area of equilateral triangle with side 6?", options:["9√3","18","12"], answer:"9√3"},
+{q:"8. Semi-perimeter of triangle 7,8,9?", options:["12","24","11"], answer:"12"},
+{q:"9. Area of triangle 7,8,9?", options:["26.83","25","28"], answer:"26.83"},
+{q:"10. Heron's formula requires?", options:["Semi-perimeter","Height","Base only"], answer:"Semi-perimeter"},
+{q:"11. Triangle with sides 6,8,10 is?", options:["Right-angled","Equilateral","Isosceles"], answer:"Right-angled"},
+{q:"12. Area of triangle with sides 10,10,10?", options:["43.3","50","40"], answer:"43.3"},
+{q:"13. Triangle with sides 5,5,8 is?", options:["Isosceles","Equilateral","Scalene"], answer:"Isosceles"},
+{q:"14. Semi-perimeter of triangle 5,5,8?", options:["9","10","11"], answer:"9"},
+{q:"15. Area of triangle 5,5,8?", options:["12","10","15"], answer:"12"},
+{q:"16. Which triangle is scalene?", options:["5,6,7","5,5,8","10,10,10"], answer:"5,6,7"},
+{q:"17. Semi-perimeter of 3,4,5?", options:["6","7","5"], answer:"6"},
+{q:"18. Area of right triangle 3,4,5?", options:["6","12","7"], answer:"6"},
+{q:"19. Area of triangle with sides 8,15,17?", options:["60","65","64"], answer:"60"},
+{q:"20. Triangle with sides 9,12,15 is?", options:["Right-angled","Equilateral","Isosceles"], answer:"Right-angled"},
+{q:"21. Heron's formula is derived from?", options:["√(s(s-a)(s-b)(s-c))","Base*Height/2","Pythagoras theorem"], answer:"√(s(s-a)(s-b)(s-c))"},
+{q:"22. Triangle sides 13,14,15 area?", options:["84","85","86"], answer:"84"},
+{q:"23. Triangle sides 9,9,10 area?", options:["37.8","40","36"], answer:"37.8"},
+{q:"24. Semi-perimeter of 9,9,10?", options:["14","15","16"], answer:"14"},
+{q:"25. Triangle with sides 8,8,8 is?", options:["Equilateral","Isosceles","Scalene"], answer:"Equilateral"},
+{q:"26. Area of triangle 8,8,8?", options:["27.7","28","30"], answer:"27.7"},
+{q:"27. Semi-perimeter of 8,8,8?", options:["12","10","11"], answer:"12"},
+{q:"28. Triangle with sides 7,24,25 semi-perimeter?", options:["28","26","27"], answer:"28"},
+{q:"29. Area of 7,24,25?", options:["84","85","86"], answer:"84"},
+{q:"30. Triangle sides 6,7,8 area?", options:["20.33","21","22"], answer:"20.33"},
+{q:"31. Triangle 5,12,13 area?", options:["30","32","28"], answer:"30"},
+{q:"32. Heron's formula used when?", options:["All sides known","Base & height known","Only 2 sides known"], answer:"All sides known"},
+{q:"33. Triangle with sides 10,24,26 area?", options:["120","130","110"], answer:"120"},
+{q:"34. Triangle with sides 7,10,5 area?", options:["16.25","17","15"], answer:"16.25"},
+{q:"35. Triangle 13,14,15 semi-perimeter?", options:["21","20","22"], answer:"21"},
+{q:"36. Triangle 6,6,6 area?", options:["15.6","15.59","18"], answer:"15.59"},
+{q:"37. Equilateral triangle side 9 area?", options:["35.07","36","34"], answer:"35.07"},
+{q:"38. Triangle 8,15,17 area?", options:["60","64","65"], answer:"60"},
+{q:"39. Triangle 12,5,13 is?", options:["Right-angled","Equilateral","Isosceles"], answer:"Right-angled"},
+{q:"40. Triangle 10,6,8 area?", options:["24","25","23"], answer:"24"},
+{q:"41. Triangle 9,10,11 area?", options:["42.42","44","40"], answer:"42.42"},
+{q:"42. Triangle 5,6,7 semi-perimeter?", options:["9","10","8"], answer:"9"},
+{q:"43. Triangle sides 3,4,6 area?", options:["5.33","6","6.5"], answer:"5.33"},
+{q:"44. Triangle sides 7,7,7 area?", options:["21.2","21.22","21"], answer:"21.22"},
+{q:"45. Triangle sides 6,8,10 semi-perimeter?", options:["12","13","11"], answer:"12"},
+{q:"46. Triangle 6,8,10 area?", options:["24","25","26"], answer:"24"},
+{q:"47. Triangle 5,5,6 semi-perimeter?", options:["8","7","9"], answer:"8"},
+{q:"48. Triangle 5,5,6 area?", options:["12","11","13"], answer:"12"},
+{q:"49. Area of equilateral triangle side 12?", options:["62.35","62","64"], answer:"62.35"},
+{q:"50. Semi-perimeter of 12,13,14?", options:["19.5","20","18"], answer:"19.5"},
+{q:"51. Triangle 12,13,14 area?", options:["72","78","75"], answer:"72"},
+{q:"52. Triangle 9,9,10 semi-perimeter?", options:["14","15","13"], answer:"14"},
+{q:"53. Triangle 9,9,10 area?", options:["37.8","36","38"], answer:"37.8"},
+{q:"54. Triangle 7,7,8 semi-perimeter?", options:["11","10","12"], answer:"11"},
+{q:"55. Triangle 7,7,8 area?", options:["24","23","25"], answer:"24"},
+{q:"56. Triangle 13,14,15 area?", options:["84","85","86"], answer:"84"},
+{q:"57. Triangle 3,3,3 area?", options:["3.89","3.87","4"], answer:"3.89"},
+{q:"58. Triangle 5,12,13 semi-perimeter?", options:["15","16","14"], answer:"15"},
+{q:"59. Triangle 5,12,13 area?", options:["30","32","28"], answer:"30"},
+{q:"60. Triangle 8,10,12 semi-perimeter?", options:["15","16","17"], answer:"15"},
+{q:"61. Triangle 8,10,12 area?", options:["39.1","39","40"], answer:"39.1"},
+{q:"62. Triangle sides 7,24,25 semi-perimeter?", options:["28","26","27"], answer:"28"},
+{q:"63. Triangle sides 7,24,25 area?", options:["84","86","85"], answer:"84"},
+{q:"64. Triangle 9,12,15 semi-perimeter?", options:["18","19","17"], answer:"18"},
+{q:"65. Triangle 9,12,15 area?", options:["54","55","56"], answer:"54"},
+{q:"66. Triangle 6,9,12 area?", options:["26.83","27","28"], answer:"26.83"},
+{q:"67. Triangle 5,5,8 area?", options:["12","13","11"], answer:"12"},
+{q:"68. Triangle 4,5,6 area?", options:["9.92","10","9.5"], answer:"9.92"},
+{q:"69. Triangle 3,4,5 semi-perimeter?", options:["6","7","5"], answer:"6"},
+{q:"70. Triangle 3,4,5 area?", options:["6","5","7"], answer:"6"}
+];
+
+// Render MCQs
+const container = document.getElementById('mcq-container');
+mcqs.forEach((item,i)=>{
+  let div = document.createElement('div');
+  div.className='card';
+  div.innerHTML=`<p>${i+1}. ${item.q}</p>`+
+    item.options.map(opt=>`<input type="radio" name="q${i}" value="${opt}"> ${opt}<br>`).join('')+
+    `<button class="mcq-btn" onclick="checkMCQ('q${i}','${item.answer}')">Check Answer</button>`+
+    `<p class="result" id="q${i}-result"></p>`;
+  container.appendChild(div);
+});
+
+// Check function
+function checkMCQ(qname, correct){
+  let options = document.getElementsByName(qname);
+  let result = document.getElementById(qname+'-result');
+  let selected = '';
+  for(let i=0;i<options.length;i++){
+    if(options[i].checked){ selected = options[i].value; break; }
+  }
+  if(selected===''){ result.innerHTML='Please select an answer.';}
+  else if(selected===correct){ result.innerHTML='✅ Correct!';}
+  else{ result.innerHTML=`❌ Wrong! Correct answer is ${correct}.`;}
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>

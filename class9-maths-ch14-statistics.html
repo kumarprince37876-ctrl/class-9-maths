@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Statistics / Data Handling</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+.container{max-width:900px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-bottom:12px;box-shadow:0 0 5px #ccc;}
+h2{margin-top:0;}
+button.mcq-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;margin-top:8px;}
+p.result{font-weight:bold;margin-top:5px;}
+table{border-collapse:collapse;width:100%;margin-top:10px;}
+table, th, td{border:1px solid #ccc;padding:8px;text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths</h1>
+<p>Chapter: Statistics / Data Handling – Notes + MCQs</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+<!-- Notes Section -->
+<div class="card">
+<h2>Formulas / Notes</h2>
+<ul>
+<li><b>Mean:</b> Average of data → Mean = Σx / n</li>
+<li><b>Median:</b> Middle value after arranging data in order</li>
+<li><b>Mode:</b> Most frequently occurring value</li>
+<li><b>Range:</b> Difference between largest & smallest values → Range = Max - Min</li>
+<li><b>For grouped data:</b> Mean = Σ(f×x)/Σf, Median = L + ((n/2 - cf)/f) × h, Mode = L + ((f1-f0)/2f1-f0-f2)×h</li>
+<li>Where L = lower boundary of median/modal class, f = frequency of median/modal class, cf = cumulative frequency before median class, h = class width, f1 = frequency of modal class, f0 = frequency before modal class, f2 = frequency after modal class</li>
+</ul>
+
+<p class="example"><b>Example:</b> Data: 2,4,5,7,10 → Mean = (2+4+5+7+10)/5 = 5.6</p>
+</div>
+
+<!-- Table Example -->
+<div class="card">
+<h2>Frequency Table Example</h2>
+<table>
+<tr><th>Class Interval</th><th>Frequency (f)</th></tr>
+<tr><td>0-10</td><td>5</td></tr>
+<tr><td>10-20</td><td>8</td></tr>
+<tr><td>20-30</td><td>12</td></tr>
+<tr><td>30-40</td><td>5</td></tr>
+</table>
+<p>Mean = Σ(f×x)/Σf, Median class = 20-30, Modal class = 20-30</p>
+</div>
+
+<!-- MCQs Section -->
+<div class="card">
+<h2>50 MCQs – Statistics / Data Handling</h2>
+<div id="mcq-container"></div>
+</div>
+
+</div>
+
+<script>
+const mcqs = [
+{q:"1. Mean of 2,4,6,8,10?", options:["6","5","7"], answer:"6"},
+{q:"2. Median of 3,7,9,11,15?", options:["9","11","7"], answer:"9"},
+{q:"3. Mode of 2,2,3,3,3,4?", options:["3","2","4"], answer:"3"},
+{q:"4. Range of 5,8,12,15?", options:["10","12","15"], answer:"10"},
+{q:"5. Mean of 5,10,15?", options:["10","11","12"], answer:"10"},
+{q:"6. Median of 1,2,3,4,5,6?", options:["3.5","4","3"], answer:"3.5"},
+{q:"7. Mode of 1,2,2,3,3,3,4?", options:["3","2","1"], answer:"3"},
+{q:"8. Range of 7,12,15,20?", options:["13","14","12"], answer:"13"},
+{q:"9. For grouped data, Mean formula?", options:["Σ(f×x)/Σf","Σx/n","Max-Min"], answer:"Σ(f×x)/Σf"},
+{q:"10. Median class formula?", options:["L + ((n/2-cf)/f)×h","Σx/n","Mode"], answer:"L + ((n/2-cf)/f)×h"},
+{q:"11. Modal class formula?", options:["L + ((f1-f0)/(2f1-f0-f2))×h","Σx/n","Median"], answer:"L + ((f1-f0)/(2f1-f0-f2))×h"},
+{q:"12. If data is 5,7,8,10,12 → Mean?", options:["8.4","8","9"], answer:"8.4"},
+{q:"13. If data is 3,3,5,7,7 → Median?", options:["5","3","7"], answer:"5"},
+{q:"14. Mode of 4,4,4,5,5,6?", options:["4","5","6"], answer:"4"},
+{q:"15. Range of 10,15,20,25?", options:["15","10","12"], answer:"15"},
+{q:"16. Mean of 10,20,30?", options:["20","25","15"], answer:"20"},
+{q:"17. Median of 1,2,3,4,5?", options:["3","4","2"], answer:"3"},
+{q:"18. Mode of 5,5,6,7,7,7?", options:["7","5","6"], answer:"7"},
+{q:"19. Range of 2,4,6,8?", options:["6","5","4"], answer:"6"},
+{q:"20. For frequency table, Σf =?", options:["Sum of frequencies","Sum of values","Sum of squares"], answer:"Sum of frequencies"},
+{q:"21. For frequency table, Σ(f×x) =?", options:["Sum of products of midpoints × frequency","Sum of frequencies","Sum of values"], answer:"Sum of products of midpoints × frequency"},
+{q:"22. Median of 5,5,5,10,15?", options:["5","10","15"], answer:"5"},
+{q:"23. Mode of 10,10,20,20,20,30?", options:["20","10","30"], answer:"20"},
+{q:"24. Range of 12,15,20,25?", options:["13","15","14"], answer:"13"},
+{q:"25. Mean of 1,3,5,7,9?", options:["5","6","4"], answer:"5"},
+{q:"26. Median of 6,7,8,9,10?", options:["8","9","7"], answer:"8"},
+{q:"27. Mode of 1,1,2,2,2,3?", options:["2","1","3"], answer:"2"},
+{q:"28. Range of 5,10,15,20?", options:["15","10","12"], answer:"15"},
+{q:"29. Mean of 2,4,6,8,10,12?", options:["7","6","8"], answer:"7"},
+{q:"30. Median of 10,12,14,16,18?", options:["14","16","12"], answer:"14"},
+{q:"31. Mode of 3,3,3,4,5?", options:["3","4","5"], answer:"3"},
+{q:"32. Range of 1,4,7,10?", options:["9","10","8"], answer:"9"},
+{q:"33. Mean of 10,20,30,40?", options:["25","30","20"], answer:"25"},
+{q:"34. Median of 15,20,25,30,35?", options:["25","30","20"], answer:"25"},
+{q:"35. Mode of 2,2,3,4,5?", options:["2","3","4"], answer:"2"},
+{q:"36. Range of 7,8,9,10?", options:["3","4","2"], answer:"3"},
+{q:"37. Mean formula for grouped data?", options:["Σ(f×x)/Σf","Σx/n","Max-Min"], answer:"Σ(f×x)/Σf"},
+{q:"38. Median class lower boundary?", options:["L","h","f"], answer:"L"},
+{q:"39. Modal class frequency?", options:["f1","f2","cf"], answer:"f1"},
+{q:"40. Class width formula?", options:["h = upper-lower","f1-f0","Σf/n"], answer:"h = upper-lower"},
+{q:"41. Mean of 1,2,3,4?", options:["2.5","2","3"], answer:"2.5"},
+{q:"42. Median of 5,6,7,8,9?", options:["7","8","6"], answer:"7"},
+{q:"43. Mode of 1,2,2,3,3,3?", options:["3","2","1"], answer:"3"},
+{q:"44. Range of 6,7,8,9?", options:["3","2","4"], answer:"3"},
+{q:"45. Σf in table 0-10,10-20,20-30?", options:["Sum of frequencies","Sum of midpoints","Sum of values"], answer:"Sum of frequencies"},
+{q:"46. Median class if n=50?", options:["Class containing 25th item","Class containing 50th","Class containing 10th"], answer:"Class containing 25th item"},
+{q:"47. Mode formula uses?", options:["f1,f0,f2,h","L,Σf","x,n"], answer:"f1,f0,f2,h"},
+{q:"48. Mean of 3,5,7,9,11?", options:["7","6","8"], answer:"7"},
+{q:"49. Median of 2,4,6,8,10?", options:["6","5","7"], answer:"6"},
+{q:"50. Mode of 5,5,6,7,7?", options:["5","6","7"], answer:"5"}
+];
+
+// Render MCQs
+const container = document.getElementById('mcq-container');
+mcqs.forEach((item,i)=>{
+  let div = document.createElement('div');
+  div.className='card';
+  div.innerHTML=`<p>${i+1}. ${item.q}</p>`+
+    item.options.map(opt=>`<input type="radio" name="q${i}" value="${opt}"> ${opt}<br>`).join('')+
+    `<button class="mcq-btn" onclick="checkMCQ('q${i}','${item.answer}')">Check Answer</button>`+
+    `<p class="result" id="q${i}-result"></p>`;
+  container.appendChild(div);
+});
+
+// Check function
+function checkMCQ(qname, correct){
+  let options = document.getElementsByName(qname);
+  let result = document.getElementById(qname+'-result');
+  let selected = '';
+  for(let i=0;i<options.length;i++){
+    if(options[i].checked){ selected = options[i].value; break; }
+  }
+  if(selected===''){ result.innerHTML='Please select an answer.';}
+  else if(selected===correct){ result.innerHTML='✅ Correct!';}
+  else{ result.innerHTML=`❌ Wrong! Correct answer is ${correct}.`;}
+}
+</script>
+
+</body>
+</html>
