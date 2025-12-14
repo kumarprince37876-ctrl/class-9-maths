@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – Student Portal</title>
+<style>
+:root{--bg:#f4f4f4;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+.container{max-width:500px;margin:20px auto;padding:20px;}
+.card{background:var(--card);padding:20px;border-radius:10px;margin-bottom:20px;box-shadow:0 0 5px #ccc;}
+input, select{width:100%;padding:8px;margin:5px 0 10px 0;border-radius:5px;border:1px solid #ccc;}
+button{padding:10px 15px;background:var(--primary);color:#fff;border:none;border-radius:5px;cursor:pointer;}
+button:hover{opacity:0.9;}
+#studentList{margin-top:20px;}
+table{width:100%;border-collapse:collapse;}
+th, td{border:1px solid #ccc;padding:8px;text-align:center;}
+nav{padding:10px;text-align:center;background:var(--card);}
+nav button{padding:8px 14px;border:none;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;margin:5px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths Student Portal</h1>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+<!-- Signup Form -->
+<div class="card">
+<h2>Signup</h2>
+<input type="text" id="signupName" placeholder="Full Name" required>
+<input type="email" id="signupEmail" placeholder="Email" required>
+<input type="password" id="signupPass" placeholder="Password" required>
+<button onclick="signup()">Signup</button>
+<p id="signupMsg"></p>
+</div>
+
+<!-- Login Form -->
+<div class="card">
+<h2>Login</h2>
+<input type="email" id="loginEmail" placeholder="Email" required>
+<input type="password" id="loginPass" placeholder="Password" required>
+<button onclick="login()">Login</button>
+<p id="loginMsg"></p>
+</div>
+
+<!-- Student Details -->
+<div class="card">
+<h2>Student Details</h2>
+<input type="text" id="studentName" placeholder="Student Name" required>
+<input type="number" id="studentRoll" placeholder="Roll Number" required>
+<select id="studentClass">
+<option value="">Select Class</option>
+<option value="9A">9A</option>
+<option value="9B">9B</option>
+<option value="9C">9C</option>
+</select>
+<button onclick="addStudent()">Add Student</button>
+
+<div id="studentList"></div>
+</div>
+
+</div>
+
+<script>
+// Signup function
+function signup(){
+  let name = document.getElementById('signupName').value;
+  let email = document.getElementById('signupEmail').value;
+  let pass = document.getElementById('signupPass').value;
+  if(name && email && pass){
+    let users = JSON.parse(localStorage.getItem('users')||'[]');
+    let exist = users.find(u=>u.email===email);
+    if(exist){
+      document.getElementById('signupMsg').innerText='❌ Email already registered!';
+    } else {
+      users.push({name,email,pass});
+      localStorage.setItem('users',JSON.stringify(users));
+      document.getElementById('signupMsg').innerText='✅ Signup successful!';
+      document.getElementById('signupName').value='';
+      document.getElementById('signupEmail').value='';
+      document.getElementById('signupPass').value='';
+    }
+  } else {
+    document.getElementById('signupMsg').innerText='❌ Please fill all fields!';
+  }
+}
+
+// Login function
+function login(){
+  let email = document.getElementById('loginEmail').value;
+  let pass = document.getElementById('loginPass').value;
+  let users = JSON.parse(localStorage.getItem('users')||'[]');
+  let user = users.find(u=>u.email===email && u.pass===pass);
+  if(user){
+    document.getElementById('loginMsg').innerText=`✅ Welcome ${user.name}!`;
+    document.getElementById('loginEmail').value='';
+    document.getElementById('loginPass').value='';
+  } else {
+    document.getElementById('loginMsg').innerText='❌ Invalid credentials!';
+  }
+}
+
+// Add Student Details
+function addStudent(){
+  let name = document.getElementById('studentName').value;
+  let roll = document.getElementById('studentRoll').value;
+  let cls = document.getElementById('studentClass').value;
+  if(name && roll && cls){
+    let students = JSON.parse(localStorage.getItem('students')||'[]');
+    students.push({name,roll,cls});
+    localStorage.setItem('students',JSON.stringify(students));
+    document.getElementById('studentName').value='';
+    document.getElementById('studentRoll').value='';
+    document.getElementById('studentClass').value='';
+    showStudents();
+  } else {
+    alert('Please fill all fields!');
+  }
+}
+
+// Show Student List
+function showStudents(){
+  let students = JSON.parse(localStorage.getItem('students')||'[]');
+  let html = '<table><tr><th>Roll No</th><th>Name</th><th>Class</th></tr>';
+  students.forEach(s=>{
+    html+=`<tr><td>${s.roll}</td><td>${s.name}</td><td>${s.cls}</td></tr>`;
+  });
+  html+='</table>';
+  document.getElementById('studentList').innerHTML = html;
+}
+
+// Initial load
+showStudents();
+</script>
+
+</body>
+</html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths – All Chapters</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--text:#111;--primary:#1e88e5;}
+.dark{--bg:#121212;--card:#1e1e1e;--text:#f5f5f5;--primary:#90caf9;}
+body{margin:0;font-family:Poppins,sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(90deg,#1e88e5,#6a1b9a);color:#fff;padding:20px;text-align:center;}
+nav{display:flex;justify-content:center;gap:10px;background:var(--card);padding:10px;position:sticky;top:0;}
+nav button{border:none;padding:8px 14px;border-radius:20px;background:var(--primary);color:#fff;cursor:pointer;}
+.container{max-width:1000px;margin:20px auto;padding:20px;background:var(--card);border-radius:12px;}
+ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+li{background:var(--bg);padding:12px;border-radius:10px;text-align:center;transition:transform 0.3s,box-shadow 0.3s;}
+li:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+a{text-decoration:none;color:var(--text);font-weight:600;display:block;}
+footer{text-align:center;padding:15px;opacity:.8;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Class 9 Maths – All Chapters</h1>
+<p>Click on any chapter to open notes</p>
+</header>
+
+<nav>
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+<ul>
+<li><a href="class9-maths-ch1-number-system.html">Chapter 1 – Number Systems</a></li>
+<li><a href="class9-maths-ch2-polynomials.html">Chapter 2 – Polynomials</a></li>
+<li><a href="class9-maths-ch3-coordinate-geometry.html">Chapter 3 – Coordinate Geometry</a></li>
+<li><a href="class9-maths-ch4-linear-equations.html">Chapter 4 – Linear Equations</a></li>
+<li><a href="class9-maths-ch5-euclid.html">Chapter 5 – Introduction to Euclid</a></li>
+<li><a href="class9-maths-ch6-lines-angles.html">Chapter 6 – Lines and Angles</a></li>
+<li><a href="class9-maths-ch7-triangles.html">Chapter 7 – Triangles</a></li>
+<li><a href="class9-maths-ch8-quadrilaterals.html">Chapter 8 – Quadrilaterals</a></li>
+<li><a href="class9-maths-ch9-areas.html">Chapter 9 – Areas of Parallelograms and Triangles</a></li>
+<li><a href="class9-maths-ch10-circles.html">Chapter 10 – Circles</a></li>
+<li><a href="class9-maths-ch11-constructions.html">Chapter 11 – Constructions</a></li>
+<li><a href="class9-maths-ch12-herons-formula.html">Chapter 12 – Heron’s Formula</a></li>
+<li><a href="class9-maths-ch13-surface-area.html">Chapter 13 – Surface Areas and Volumes</a></li>
+<li><a href="class9-maths-ch14-statistics.html">Chapter 14 – Statistics</a></li>
+<li><a href="class9-maths-ch15-probability.html">Chapter 15 – Probability</a></li>
+</ul>
+</div>
+
+<footer>© 2025 Smart Study Notes</footer>
+<ul>
+  <li><a href="class9-maths-ch3-notes.html">Chapter 3 – Notes</a></li>
+  <li><a href="class9-maths-ch3-ncert.html">Chapter 3 – NCERT Solutions</a></li>
+  <li><a href="class9-maths-ch3-mcq.html">Chapter 3 – MCQ Test</a></li>
+  
+  <li><a href="class9-maths-ch4-notes.html">Chapter 4 – Notes</a></li>
+  <li><a href="class9-maths-ch4-ncert.html">Chapter 4 – NCERT Solutions</a></li>
+  <li><a href="class9-maths-ch4-mcq.html">Chapter 4 – MCQ Test</a></li>
+</ul>
+
+
+</body>
+</html>
+
+
+
+
+
